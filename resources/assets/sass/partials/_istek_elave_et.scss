@@ -1,0 +1,81 @@
+#istek{
+    background-color:#61bce4;
+    padding-bottom: 10px;
+    span{
+      color:#1a1a1a;
+    }
+    ul {
+        padding: 0;
+        list-style: none;
+        li{
+            &:last-child{
+                margin-top: 50px;
+            }
+            h1{
+                font-weight: 600;
+            }
+            a{
+                color: white;
+                font-weight: 600;
+                text-decoration: none;
+                &:hover{
+                    transition:all 0.3s;
+                    color: #1a1a1a;
+                }
+            }
+        }
+    }
+}
+#address{
+    padding: 20px 0;
+      #map {
+        height: 250px;
+        width: 370px;
+        margin-bottom: 20px;
+      }
+
+    .col-lg-8{ // forum
+        box-shadow: 0px 0px 20px lightgray;
+        padding: 20px 0;
+        border-radius: 3px;
+        span{
+          color: red;
+          font-size: 11px;
+          vertical-align: super;
+        }
+    }
+    ul{
+        padding: 5px;
+        list-style: none;
+            float: left;
+            margin-left: 5%;
+    }
+    label{
+        margin-top: 20px;
+    }
+
+    textarea[name="about"]{
+      margin-top: 20px;
+    }
+
+    input[type="text"], input[type="file"],input[type="date"], input[type="email"], select{
+        margin-top: 20px;
+        height: 42px;
+    }
+    input[type="submit"]{
+        margin-top: 40px;
+        background-color: #2ab6ff;
+        color: white;
+    }
+    .thumbnail{
+      height: 500px;
+      img{
+        height:20em;
+      }
+      // .caption{
+      //   p{
+      //     word-break: break-all;
+      //   }
+      // }
+    }
+}

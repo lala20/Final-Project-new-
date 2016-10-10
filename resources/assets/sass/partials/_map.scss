@@ -1,0 +1,61 @@
+#searchbar{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: #0E9EDB;
+
+  input {
+    padding-top: 10px;    //inputların ölçüsü üçün padding verilib
+    padding-bottom: 10px;
+    width: 100%;    //inputun ölçünü(paddingləri) götürməsi üçün və bütün columnu tutması üçün hər ikisi 100%
+    height: 100%;
+  }
+  input[name='submit']{
+    padding-bottom: 8px !important; // Search iconu problem yaratdığı üçün padding aşağı salınıb.
+    background: #48C1F3;
+    border: 0;
+    font-family: FontAwesome;  // inputa fontawesome əlavə etmək üçün font family verilib. search-icon: &#xf002;
+    color: white;
+    transition: all .3s ease;
+  }
+
+  //INPUT ROWS START
+  .row{
+    div:nth-child(1){ // Açar söz inputu
+      padding-left: 0;
+      padding-right: 0;
+      input{
+        border-radius: 0;
+      }
+    }
+    div:nth-child(2){  // Şəhər / Region inputu
+      padding-left: 0;
+      padding-right: 0;
+      input{
+        border-radius: 0;
+      }
+    }
+    div:nth-child(3){ // Kateqoriya inputu
+      padding-left: 0;
+      padding-right: 0;
+      input{
+        border-radius: 0;
+      }
+    }
+    div:nth-child(4){  // Submit button (search)
+      padding-left: 0;
+      padding-right: 0;
+      input{
+        border-radius: 0;
+      }
+    }
+    //INPUT ROWS END
+  }
+}
+
+// Map styles
+#googlemap{
+  iframe{
+    width: 100%;
+    height: 400px;
+  }
+}

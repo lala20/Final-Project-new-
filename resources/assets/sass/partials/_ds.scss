@@ -1,0 +1,24 @@
+#destek_olanlar {
+	a{
+	background-color: #0099ff;
+	color:white;
+  }
+	.list{
+		margin:5%;
+	  min-height: 250px;
+		border-bottom:1px solid lightgray;
+		overflow: hidden;
+	 img{
+		// width: 80%;
+		height: 150px;
+	 }
+	 a{
+		 background: white;
+		 color:black;
+	  margin-top:3em;
+	 }
+	 .list:hover{
+		 background: blue;
+	 }
+	}
+}

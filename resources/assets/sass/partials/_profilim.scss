@@ -1,0 +1,48 @@
+#profilim {
+    background-color: #f0f5f5;
+    padding: 40px 0 12.2%;
+    position: relative;
+
+    #qatqi, #qeyd{
+        padding-bottom: 18%;
+      .panel-body {
+      th{
+        width: 50px;
+      }
+        img{
+          height: 50px;
+        }
+
+  }
+    }
+    a{
+        text-decoration: none;
+    }
+
+    label {
+        position: absolute;
+        margin: 10px;
+        color: #337ab7;
+
+        &:hover {
+            color: #1E5987;
+            // border-bottom: 1px solid #1E5987;
+        }
+    }
+
+    ul {
+        margin-top: 45px;
+        padding: 10px;
+        border: 1px solid lightgrey;
+        background: white;
+
+        li {
+            padding: 5px;
+        }
+    }
+
+    input {
+        height: 30px;
+        border-radius: 5px;
+    }
+}

@@ -1,0 +1,135 @@
+/*
+   Final frontend project
+   Authors: Lalə,Günel,Fərid,Naseh
+   Team leader: Aysel
+*/
+
+// CONTACT SECTION START
+#contact {
+    background: #3d3a3a; // Contactın arxa planı qara - DƏYİŞİLƏCƏK !
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #FFFFFF; // Contactdakı yazılar ağ rəngdə - DƏYİŞİLƏ BİLƏR !
+
+    a {
+        color: #FFFFFF;
+    }
+
+    li{                  // email(contact) və social iconlara 5 padding verilib
+      padding-top: 5px;
+      padding-bottom: 5px;
+      a{
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+    }
+
+    // SOCIAL ICONS START
+    // Hover olunduğu zaman hər icon öz rəngini alır və arxa plan ağ olur - DƏYİŞİLƏ BİLƏR !
+    ul:nth-child(2){
+      i{
+        transition: all .3s ease;
+      }
+
+      li:nth-child(1){   // facebook
+        a{
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+      li:nth-child(2){    //twitter
+        a{
+          padding-left: 8px;
+          padding-right: 8px;
+        }
+      }
+      li:nth-child(3){    //google +
+        a{
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+
+      li:nth-child(1):hover {   // Facebook hover
+          //background: #FFFFFF;
+          i {
+              color: #0374a0;
+              transform: scale(2);
+          }
+      }
+      li:nth-child(2):hover {   // Twitter hover
+        //  background: #FFFFFF;
+          i {
+              color: #1DA1F2;
+              transform: scale(2);
+          }
+      }
+      li:nth-child(3):hover {  // Google + hover
+          //background: #FFFFFF;
+          i {
+              color: #DB493C;
+              transform: scale(2);
+          }
+      }
+    }
+    //SOCIAL ICONS END
+}
+// CONTACT SECTION END
+
+// NAVBAR SECTION START
+#navbar {
+  padding-top: 20px;
+    nav {
+        border-radius: 0 !important;   // nav vƏ navbar-defaultun bəzi xüsusiyyətləri sıfırlanıb
+        border: 0 !important;
+        box-shadow: none;
+        background: #FFFFFF;
+
+    }
+    .navbar-brand {
+        margin-right: 30px;
+        padding-top: 0; // navbar-brand'in top paddingi olduğuna görə sıfırlanıb.
+        img {
+            width: inherit;
+            height: inherit;
+        }
+    }
+    #myNavbar{
+      ul:first-child{     // Naviqasiya hissəsi
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 13px;
+        i{
+          padding-right: 5px;
+        }
+        a{
+          transition: all .3s ease;
+        }
+        a:hover{
+          color: #2AB6FF !important;
+        }
+        .active{  // Naviqasiyada aktiv dəyişdirilib
+          color: #2AB6FF;
+          background: none;
+        }
+      }
+      ul:last-child{    // Daxil ol və qeydiyyat hissəsi
+        a{
+          transition: all .3s ease;
+        }
+        a:hover{
+          color: #2AB6FF !important;
+        }
+        li:last-child{
+          a{           // Google + iconunu və Daxil ol sözünü eyni səviyyəyə gətirmək üçün padding:5 verilib.
+            padding-right: 10px !important;
+          }
+        }
+        i{
+          margin-right: 3px;
+          color: #2AB6FF;
+        }
+      }
+    }
+}
+// NAVBAR SECTION END

@@ -1,0 +1,11 @@
+#loginpage{
+  padding-top: 5.35%;    //Ümumi Login panelinin aşağıdan yuxardan paddingi
+  padding-bottom: 13.35%;
+  .panel-body{
+    padding-top: 30px;   // Email-şifrə yazılan hissə
+  }
+  button{
+    color: #FFF;
+    background: #0E9EDB;   // Buttonun rəngi əsas göy rənglə verilib
+  }
+}

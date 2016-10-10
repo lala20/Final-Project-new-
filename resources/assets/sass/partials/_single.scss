@@ -1,0 +1,25 @@
+#singlePage{
+  margin: 40px 0px;
+  h1{
+    padding-bottom: 15px;
+  }
+  p{
+    font-size: 16px;
+  }
+  img{
+    object-fit: cover;
+    height: 400px;
+  }
+
+  .destek-ol-button{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 0;
+  }
+
+  .destek-ol-message{
+    p{
+      padding-top: 10px;
+    }
+  }
+}

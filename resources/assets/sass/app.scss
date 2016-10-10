@@ -1,0 +1,35 @@
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "vendors/bootstrap/bootstrap";
+@import "vendors/fontawesome/font-awesome";
+@import 'https://fonts.googleapis.com/css?family=Titillium+Web:400,700&subset=latin-ext';
+@import "commonClasses";
+@import "mediaQueries";
+@import "partials/elaqe";
+@import "partials/haqqimizda";
+@import "partials/index";
+@import "partials/istek_elave_et";
+@import "partials/navbar";
+@import "partials/map";
+@import "partials/news";
+@import "partials/footer";
+@import "partials/sual";
+@import "partials/profilim";
+@import "partials/loginpage";
+@import "partials/ds";
+@import "partials/single";
+
+@font-face {
+ font-family: 'myfont';
+ src: url("../fonts/Roboto-Bold.eot");
+ src: local("Roboto-Bold"),
+ url("../fonts/Roboto-Bold.woff") format("woff"),
+ url("../fonts/Roboto-Bold.ttf") format("truetype"),
+ url("../fonts/Roboto-Bold.svg") format("svg");
+ font-weight: normal;
+ font-style: normal; }
+
+body {
+    font-family: 'myfont' !important;
+    font-weight: 400;
+    font-size: 14px;
+}

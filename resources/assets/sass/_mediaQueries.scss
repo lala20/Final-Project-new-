@@ -1,0 +1,37 @@
+@media (min-width: 768px) {
+  #map{
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {  // 768px - 991px arası Ana səhifə və qeydiyyat yazısı itir. SM
+  #myNavbar{
+    ul:nth-child(1){   // Ana səhifə yazısı.
+      li:first-child{
+        display: none;
+      }
+    }
+    ul:nth-child(2){   // Qeydiyyat yazısı.
+      li:first-child{
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px){ // Xs
+  #searchbar{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  #map{
+    display: none;
+  }
+  #istek{
+    ul{
+      li:last-child{
+        display: none;
+      }
+    }
+  }
+}
