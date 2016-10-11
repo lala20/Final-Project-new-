@@ -98,7 +98,7 @@
          @if($datamap->status=='1')
             {lat: {{$datamap->lat}},
             lng:{{$datamap->lng}},
-            title:"<b>{{$datamap->title}}</b><br> <img style='width:200px;height:150px' src='{{url('image/'.$data->image)}}'><br><a href='{{url('/single/'.$datamap->id)}}' class='btn pull-right'>Ətraflı</a>"
+            title:"<b>{{$datamap->title}}</b><br> <img style='width:200px;height:150px' src='{{url('image/'.$datamap->image)}}'><br><a href='{{url('/single/'.$datamap->id)}}' class='btn pull-right'>Ətraflı</a>"
           },
           @endif
       @endforeach

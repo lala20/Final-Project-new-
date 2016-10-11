@@ -46,25 +46,16 @@
     </div>
     <h1>Haqqımızda</h1>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-      ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-      voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Harada yaşayırıqsa yaşayaq ehtiyacı olan insanlara dəstək olmaq, bir-birimizə yardım etmək cəmiyyət olaraq hər birimizin vicdani vəzifəsidir.
+      Bu saytın yaranmasının əsas məqsədi yardıma ehtiyacı olan insanların istəklərinin qısa müddətdə sosialaşdırılması, yəni bu istəklərin ən qısa zamanda insanların nəzərinə gətirməkdir və onların daha tez qarşılanmasına şərait yaratmaqdır. Bu saytda heç bir maddi maraq güdülmür və heç bir maddi dəstəyə icazə verilmir.
     </p>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-      ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-      voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Bu saytda iki əsas bölmə var: İSTƏK ƏLAVƏ ETMƏK və DƏSTƏK OLMAQ.
+
     </p>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-      ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-      voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      “İstək əlavə et” bölməsində qarşılanmasını istədiyiniz ehtiyaclarınızı əlavə edə bilərsiniz.
+      “Dəstək ol” bölməsində isə siz verə biləcəyiniz dəstəkləri qeyd edə bilərsiniz. Qeydləriniz təhsil, tibb, məişət, heyvanlara yardım və s. tipli ola bilər..
     </p>
 
   </div>
