@@ -38,8 +38,22 @@
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="phone" class="col-md-4 control-label">Telefon Nömrəsi</label>
                             <div class="col-md-6">
+                            <div class="input-group">
+                                
+                                <div class="input-group-addon">
+                                    <input type="hidden" id="operator" name="operator" value="55">
+                                    +994                                        
+                                        <select id="nomre">
+                                              {{-- <option></option> --}}
+                                              <option>55</option>
+                                              <option>51</option>
+                                              <option>50</option>
+                                              <option>70</option>
+                                        </select>
+                                    </div>  
 
-                              <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}">
+                              <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}" maxlength="7">
+                            </div>
                               @if ($errors->has('phone'))
                                   <span class="help-block">
                                       <strong>{{ $errors->first('phone') }}</strong>

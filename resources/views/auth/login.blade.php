@@ -18,6 +18,13 @@
   <section id="loginpage">
   <div class="container">
       <div class="row">
+{{-- VERIFICATION ZAMANI GELEN IKI MESSAGE --}}
+         @if (Session::has('warning'))
+              <div class="alert alert-danger" role="alert">{{Session::get('warning')}}</div>
+              @elseif (Session::has('status'))
+              <div class="alert alert-success" role="alert">{{Session::get('status')}}</div>
+              @endif
+
           <div class="col-md-8 col-md-offset-2">
             @if (Session::has('istekerror'))
               <div class="alert alert-danger" role="alert">{{Session::get('istekerror')}}</div>

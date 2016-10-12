@@ -54,6 +54,8 @@ Route::get('/isteklerim', 'IstekController@isteklerim');
 
 Route::get('/elaqe', 'PagesController@elaqe');
 
+Route::post('/elaqe', 'PagesController@elaqesave');
+
 Route::get('/single/{id}', 'PagesController@single');
 
 Route::get('/desteksiyahisi', 'PagesController@desteklist');
@@ -61,6 +63,8 @@ Route::get('/desteksiyahisi', 'PagesController@desteklist');
 Route::get('/isteksiyahisi', 'PagesController@isteklist');
 
 Route::auth();
+Route::get('user/activation/{token}', 'Auth\AuthController@activateUser')->name('user.activate');
+
 
 Route::get('/lists', 'AdminController@lists');
 

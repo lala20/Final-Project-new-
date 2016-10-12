@@ -38,10 +38,20 @@ class IstekController extends Controller
 
     public function store(Request $req){
       Session::flash('istekadded' , "İstəyiniz uğurla əlavə olundu və yoxlamadan keçəndən sonra dərc olunacaq.");
-      $this->validate($req, [
-          'title' => 'required|max:255',
-          'lat' => 'required',
-           'lng' => 'required',
+        $this->validate($req, [
+        'title' => 'required',
+            'view' => 'required',
+            'about' => 'required',
+            'location' => 'required',
+            'lat' => 'required',
+            'lng' => 'required',
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'image' => 'required',
+            'org' => 'required',
+            'nov' => 'required',
+            'deadline' => 'required',
     ]);
 
 
