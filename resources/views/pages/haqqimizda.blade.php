@@ -16,7 +16,7 @@
     </div>
 </section>
 <section id="about_body">
-  <div class="container text-center">
+  <div class="container">
     <div class="row">
       <div class="container">
         <div class="col-md-3">
@@ -44,7 +44,7 @@
         </div>
       </div>
     </div>
-    <h1>Haqqımızda</h1>
+    <h1 class="text-center">Haqqımızda</h1>
     <p>
       Harada yaşayırıqsa yaşayaq ehtiyacı olan insanlara dəstək olmaq, bir-birimizə yardım etmək cəmiyyət olaraq hər birimizin vicdani vəzifəsidir.
       Bu saytın yaranmasının əsas məqsədi yardıma ehtiyacı olan insanların istəklərinin qısa müddətdə sosialaşdırılması, yəni bu istəklərin ən qısa zamanda insanların nəzərinə gətirməkdir və onların daha tez qarşılanmasına şərait yaratmaqdır. Bu saytda heç bir maddi maraq güdülmür və heç bir maddi dəstəyə icazə verilmir.
@@ -54,9 +54,9 @@
 
     </p>
     <p>
-      “İstək əlavə et” bölməsində qarşılanmasını istədiyiniz ehtiyaclarınızı əlavə edə bilərsiniz.
-      “Dəstək ol” bölməsində isə siz verə biləcəyiniz dəstəkləri qeyd edə bilərsiniz. Qeydləriniz təhsil, tibb, məişət, heyvanlara yardım və s. tipli ola bilər..
-    </p>
+      “İstək əlavə et” bölməsində qarşılanmasını istədiyiniz ehtiyaclarınızı əlavə edə bilərsiniz.</p>
+    <p>“Dəstək ol” bölməsində isə siz verə biləcəyiniz dəstəkləri qeyd edə bilərsiniz. Qeydləriniz təhsil, tibb, məişət, heyvanlara yardım və s. tipli ola bilər..</p>
+
 
   </div>
 </section>
