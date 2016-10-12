@@ -7963,13 +7963,9 @@ button.close {
       color: gray; }
     #elaqepage .elaqeusullari p {
       padding-top: 30px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid lightgray; }
-    #elaqepage .elaqeusullari #contactmap {
-      margin-top: 30px;
-      width: 100%;
-      height: 285px;
-      border-radius: 10px; }
+      padding-bottom: 10px; }
+    #elaqepage .elaqeusullari input, #elaqepage .elaqeusullari textarea {
+      margin-bottom: 40px; }
 
 #about_body {
   padding-bottom: 5%;

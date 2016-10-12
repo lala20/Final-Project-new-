@@ -18,47 +18,51 @@
 <section id="elaqepage">
   <div class="container">
 
-    <div class="elaqeusullari">
+     <div class="elaqeusullari">
       <div class="row">
         <div class="col-lg-12">
-          <h1 class="text-center">Əlaqə üsulları</h1>
+          <h1 class="text-center">Bizimlə əlaqə</h1>
+          <p>Əlaqə saxlamaq üçün aşağıdakı formu doldurun.</p>
         </div>
-        <div class="col-lg-3 col-lg-offset-1">
-          <p>
-            <i class="fa fa-map-marker fa-2x"></i> <i>AF Business House, 3cü mərtəbə </i>
-          </p>
-          <p>
-            <i class="fa fa-envelope-o fa-2x"></i> <i> alfagen4@gmail.com</i>
-          </p>
-          <p>
-            <i class="fa fa-phone fa-2x"></i> <i> +994877881254646</i>
-          </p>
-        </div>
-        <div class="col-lg-6 col-lg-offset-1">
-          <div id="contactmap"></div>
+         <form class="" action="" method="post">
+           <div class="col-md-7">
+              {{-- name input --}}
+             <div class="col-md-2">
+               <label for="contactName">Ad *</label>
+             </div>
+             <div class="col-md-10">
+                 <input id="contactName" class="form-control" type="text" name="contactName">
+             </div>
+               {{-- surname input --}}
+             <div class="col-md-2">
+               <label for="contactSurname">Soyad *</label>
+             </div>
+             <div class="col-md-10">
+                 <input id="contactSurname" class="form-control" type="text" name="contactSurname">
+             </div>
+             {{-- email input --}}
+             <div class="col-md-2">
+               <label for="contactEmail">Email *</label>
+             </div>
+             <div class="col-md-10">
+                 <input id="contactEmail" class="form-control" type="text" name="contactEmail">
+             </div>
+             {{-- message input --}}
+             <div class="col-md-2">
+               <label for="contactMessage">Mesaj *</label>
+             </div>
+             <div class="col-md-10">
+                 <textarea id="contactMessage" rows="10" class="form-control" type="text" name="contactMessage"></textarea>
+             </div>
+             <div class="col-md-4 col-md-offset-4">
+                <input type="submit" name="send" value="Göndər" class="btn btn-success form-control">
+             </div>
+         </form>
+
         </div>
       </div>
     </div>
+
   </div>
 </section>
-       <script type="text/javascript">
-
-        function contactMap() {
-        var map = new google.maps.Map(document.getElementById('contactmap'), {
-          center: {lat: 40.37743150000001, lng: 49.85410260000003},
-          zoom: 16,
-          zoomControl:false,
-          streetViewControl:false,
-          mapTypeControl:false,
-          scrollwheel:false
-        });
-        marker = new google.maps.Marker({
-         map: map,
-         animation: google.maps.Animation.DROP,
-         position: {lat: 40.37743150000001, lng: 49.85410260000003}
-      });
-    }
-       </script>
-       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&callback=contactMap"
-       async defer></script>
 @endsection
