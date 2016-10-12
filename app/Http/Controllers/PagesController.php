@@ -8,8 +8,10 @@ use App\Http\Requests;
 use App\City;
 use App\Elan;
 use App\User;
+use App\Contact;
 use Auth;
 use DateTime;
+use Session;
 
 class PagesController extends Controller
 {
@@ -98,5 +100,12 @@ class PagesController extends Controller
     return view('pages.profilqatqi');
     }
 
+    public function elaqesave(Request $request)
+    {
+      $send = new Contact;
+      $send->create($request->all());
+      Session::flash('send', 'İsmarıcınız müvəffəqiyyətlə göndərildi.');
+      return back();
+    }
 
 }

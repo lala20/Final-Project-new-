@@ -8,6 +8,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
+use Illuminate\Http\Request;//verification
+use App\ActivationService;//verification
+
+use Session;
+
+
 class AuthController extends Controller
 {
     /*
@@ -28,6 +34,9 @@ class AuthController extends Controller
      *
      * @var string
      */
+    protected $activationService;//verification
+
+
     protected $redirectTo = '/';
 
     /**
@@ -35,9 +44,16 @@ class AuthController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    // public function __construct()
+    // {
+    //     $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+    // }
+
+
+        public function __construct(ActivationService $activationService)
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+        $this->activationService = $activationService;
     }
 
     /**
@@ -69,10 +85,47 @@ class AuthController extends Controller
         return User::create([
             'username' => $data['username'],
             'name' => $data['name'],
-            'phone' => $data['phone'],
+            'phone' => '+994'.$data['operator'].$data['phone'],
             'city' => $data['city'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+        public function register(Request $request)
+    {
+ 
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+
+        $user = $this->create($request->all());
+
+        $this->activationService->sendActivationMail($user);
+
+        return redirect('/login')->with('status', 'Biz sizə aktivasiya linki yolladıq. Zəhmət olmasa Email adresinizi yoxlayın');
+    }
+
+    public function authenticated(Request $request, $user)
+    {
+        if (!$user->activated) {
+            $this->activationService->sendActivationMail($user);
+            auth()->logout();
+            return back()->with('warning',"Hesabınızı təsdiqləməlisiniz. Biz sizə aktivasiya kodu yollamışıq, zəhmət olmasa email adresinizi yoxlayın.");
+        }
+        return redirect()->intended($this->redirectPath());
+    }
+
+
+    public function activateUser($token)
+    {
+        if ($user = $this->activationService->activateUser($token)) {
+            auth()->login($user);
+            return redirect($this->redirectPath());
+        }
+        abort(404);
     }
 }
