@@ -20,7 +20,6 @@ class DestekController extends Controller
   }
     public function show(){
       $sonEls=Elan::orderBy('created_at','desc')->first();
-      // dd($sonEls);
       if ($sonEls != null) {
         $he=1;
       return view('pages.destek', compact('sonEls', 'he'));
