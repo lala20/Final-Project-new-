@@ -20,7 +20,7 @@ use App\City;
               <!-- Email və əlaqə nömrəsi -->
 
                 <ul class="list-inline pull-left margin0 padding0">
-                    <li><a href="mailto:info@testwebsite.com"><h6 class="pull-left margin0">alfagen4@gmail.com</h6></a></li>
+                    <li><a href="mailto:alfagen4@gmail.com"><h6 class="pull-left margin0">alfagen4@gmail.com</h6></a></li>
                 </ul>
                 <!-- Social fontawesome iconlar-->
                 <ul class="list-inline pull-right margin0 padding0">
@@ -62,8 +62,40 @@ use App\City;
                   <ul class="nav navbar-nav navbar-right">
                       <!-- Authentication Links -->
                       @if (Auth::guest())
-                        <li><a href="{{url('/register')}}"><i class="fa fa-user-plus"></i> Qeydiyyat</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-user-plus"></i> Qeydiyyat</a></li>
                         <li><a href="{{url('/login')}}"><i class="fa fa-sign-in"></i> Daxil ol</a></li>
+
+                        <!-- Modal -->
+                        <div id="myModal" class="modal fade" role="dialog">
+                          <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Qeydiyyat</h4>
+                              </div>
+                              <div class="modal-body">
+                                 <div class="col-lg-8 col-lg-offset-2">
+                                    <a class="btn center-block"  href="{{route('google.login')}}"><i class="fa fa-google-plus" aria-hidden="true"></i> Google+ Qeydiyyat</a>
+                                 </div>
+                                 <div class="col-lg-8 col-lg-offset-2">
+                                    <a class="btn center-block" href="{{route('facebook.login')}}"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook Qeydiyyat</a>
+                                 </div>
+                                 <div class="col-lg-8 col-lg-offset-2">
+                                    <a class="btn center-block" href="{{url('/register')}}"><i class="fa fa-envelope-o" aria-hidden="true"></i>Email Qeydiyyat</a>
+                                 </div>
+                              </div>
+                              <div class="clearfix">
+
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Bağla</button>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
                       @else
                           <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

@@ -43,21 +43,18 @@ class DestekController extends Controller
 
     public function store(Request $req){
 
-       $this->validate($req, [
-        'title' => 'required',
-            'view' => 'required',
-            'about' => 'required',
-            'location' => 'required',
-            'lat' => 'required',
-            'lng' => 'required',
-            'name' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
-            'image' => 'required',
-            'org' => 'required',
-            'nov' => 'required',
-            'deadline' => 'required',
-    ]);
+      $this->validate($req, [
+      'title' => 'required',
+          'about' => 'required',
+          'location' => 'required',
+          'lat' => 'required',
+          'lng' => 'required',
+          'name' => 'required',
+          'phone' => 'required',
+          'email' => 'required',
+          'image' => 'required',
+          'nov' => 'required',
+  ]);
 
       Session::flash('destekadded' , "Dəstəyiniz uğurla əlavə olundu və yoxlamadan keçəndən sonra dərc olunacaq.");
       $direction='image';

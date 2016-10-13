@@ -1,7 +1,17 @@
 @extends('pages.layout')
 
 @section('content')
+   @if (isset($user) && isset($myEmail))
+      <?php $name = $user?>
+      <?php $username = $user?>
+      <?php $email = $myEmail?>
 
+   @else
+      <?php $name = old('name')?>
+      <?php $username = old('username')?>
+      <?php $email = old('email')?>
+
+   @endif
 
 <div class="container">
     <div class="row">
@@ -15,7 +25,7 @@
                             <label for="name" class="col-md-4 control-label">Adınız Soyadınız</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                <input id="name" type="text" class="form-control" name="name" value="{{$name}}">
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -27,7 +37,7 @@
                         <div class="form-group{{$errors->has('username') ? ' has-error ' : ''}}">
                           <label for="username" class="col-md-4 control-label">İstifadəçi adı</label>
                           <div class="col-md-6">
-                              <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}">
+                              <input id="username" type="text" class="form-control" name="username" value="{{ $username }}">
                             @if ($errors->has('username'))
                               <span class="help-block">
                                 <strong>{{ $errors->first('username') }}</strong>
@@ -35,22 +45,22 @@
                             @endif
                           </div>
                         </div>
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                             <label for="phone" class="col-md-4 control-label">Telefon Nömrəsi</label>
                             <div class="col-md-6">
                             <div class="input-group">
-                                
+
                                 <div class="input-group-addon">
                                     <input type="hidden" id="operator" name="operator" value="55">
-                                    +994                                        
+                                    +994
                                         <select id="nomre">
-                                              {{-- <option></option> --}}
                                               <option>55</option>
                                               <option>51</option>
                                               <option>50</option>
                                               <option>70</option>
+                                              <option>77</option>
                                         </select>
-                                    </div>  
+                                    </div>
 
                               <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}" maxlength="7">
                             </div>
@@ -66,7 +76,7 @@
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <input id="email" type="email" class="form-control" name="email" value="{{$email}}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
