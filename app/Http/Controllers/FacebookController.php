@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Socialite;
+use Session;
 
 class FacebookController extends Controller
 {
@@ -27,9 +28,11 @@ class FacebookController extends Controller
         $users = Socialite::driver('facebook')->user();
         $user = $users->getName();
         $myEmail = $users->getEmail();
-      //   dd($users);
 
-        return view('auth.register',compact('user','myEmail'));
+        Session::flash('user',$user);
+        Session::flash('email',$myEmail);
+      return redirect('/register');
+
 
         // $user->token;
     }

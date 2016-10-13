@@ -1,10 +1,10 @@
 @extends('pages.layout')
 
 @section('content')
-   @if (isset($user) && isset($myEmail))
-      <?php $name = $user?>
-      <?php $username = $user?>
-      <?php $email = $myEmail?>
+   @if (Session::has('user') && Session::has('email'))
+      <?php $name = Session::get('user')?>
+      <?php $username = Session::get('user')?>
+      <?php $email = Session::get('email')?>
 
    @else
       <?php $name = old('name')?>

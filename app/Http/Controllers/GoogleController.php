@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Socialite;
+use Session;
 
 class GoogleController extends Controller
 {
@@ -26,8 +27,9 @@ class GoogleController extends Controller
         $users = Socialite::driver('google')->user();
         $user = $users->getName();
         $myEmail = $users->getEmail();
-
-        return view('auth.register',compact('user','myEmail'));
+        Session::flash('user',$user);
+        Session::flash('email',$myEmail);
+      return redirect('/register');
 
         // $user->token;
     }
