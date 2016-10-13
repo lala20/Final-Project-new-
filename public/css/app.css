@@ -8108,12 +8108,35 @@ button.close {
   #navbar #myNavbar ul:last-child a {
     transition: all .3s ease; }
   #navbar #myNavbar ul:last-child a:hover {
-    color: #2AB6FF !important; }
+    color: #2AB6FF; }
   #navbar #myNavbar ul:last-child li:last-child a {
     padding-right: 10px !important; }
   #navbar #myNavbar ul:last-child i {
     margin-right: 3px;
     color: #2AB6FF; }
+  #navbar .modal-body .col-lg-8 {
+    margin-bottom: 20px; }
+    #navbar .modal-body .col-lg-8 a {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      color: white; }
+      #navbar .modal-body .col-lg-8 a i {
+        color: white !important; }
+  #navbar .modal-body .col-lg-8:first-child {
+    background: #DD4C3B; }
+    #navbar .modal-body .col-lg-8:first-child:hover a {
+      transform: scale(1.6);
+      color: white !important; }
+  #navbar .modal-body .col-lg-8:nth-child(2) {
+    background: #3C5A99; }
+    #navbar .modal-body .col-lg-8:nth-child(2):hover a {
+      transform: scale(1.6);
+      color: white !important; }
+  #navbar .modal-body .col-lg-8:nth-child(3) {
+    background: #262827; }
+    #navbar .modal-body .col-lg-8:nth-child(3):hover a {
+      transform: scale(1.6);
+      color: white !important; }
 
 #searchbar {
   padding-top: 15px;
@@ -8276,6 +8299,11 @@ button.close {
     border-radius: 0; }
   #singlePage .destek-ol-message p {
     padding-top: 10px; }
+  #singlePage .social-buttons .faceBook {
+    border: 1px solid lightgray;
+    margin-top: -16px;
+    padding: 1px 5px;
+    border-radius: 0; }
 
 @font-face {
   font-family: 'myfont';

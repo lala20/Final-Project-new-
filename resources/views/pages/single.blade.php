@@ -28,17 +28,35 @@
               </div>
               <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                 <h1 class="text-center">{{$single->title}}</h1>
-                  <p class="text-right">
-                  </p>
-                  @if(!$diff->d == 0 && $diff->m == 0)
-                    <p class="text-right">
-                    İstəyin müddəti: {{$diff->d}} gün
-                  </p>
-                @else
-                  <p class="text-right">
-                  İstəyin müddəti: {{$diff->m}} ay {{$diff->d}} gün
-                </p>
-              @endif
+                <div class="row">
+                   <div class="col-md-6">
+                         <div class="social-buttons">
+                           @php
+                              $url = 'http://13.94.234.172:88/single/.{{$single->id}}';
+                           @endphp
+                           <a class="btn faceBook" href="https://www.facebook.com/sharer/sharer.php?u={{ $url }}" target="_blank">
+                              <i class="fa fa-facebook-official"></i> Paylaş
+                           </a>
+                           {{-- Share with Google+ --}}
+                          <script src="https://apis.google.com/js/platform.js" async defer>
+                          {lang: 'tr'}
+                          </script>
+                          <div class="g-plus" data-action="share" data-annotation="bubble" data-height="24" data-href="http://13.94.234.172:88/single/{{$single->id}}"></div>
+                       </div>
+                   </div>
+                   <div class="col-md-6">
+                      @if(!$diff->d == 0 && $diff->m == 0)
+                       <p class="text-right">
+                       İstəyin müddəti: {{$diff->d}} gün
+                     </p>
+                   @else
+                     <p class="text-right">
+                     İstəyin müddəti: {{$diff->m}} ay {{$diff->d}} gün
+                   </p>
+                 @endif
+
+                   </div>
+                </div>
                 <p class="text-justify">{{$single->about}}</p>
               </div>
           </div>

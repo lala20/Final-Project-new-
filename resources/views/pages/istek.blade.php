@@ -37,8 +37,8 @@
                             <span class="help-block">
                               <strong>Boşluq buraxmayın</strong>
                             </span>
-                        @endif 
-                      </div> 
+                        @endif
+                      </div>
                     </div>
 
                     <div class="form-group{{ $errors->has('location') || $errors->has('lat') && $errors->has('lng')? ' has-error' : '' }}">
@@ -66,11 +66,11 @@
                       <label class="control-label col-sm-3" for="aciq">Açıqlama<span>*</span></label>
                       <div class="col-sm-9">
                         <textarea name="about" rows="8" class="form-control" id="aciq" placeholder="İstəyin detalları"></textarea>
-                        @if ($errors->has('image'))
+                        @if ($errors->has('about'))
                             <span class="help-block">
                               <strong>Boşluq buraxmayın</strong>
                             </span>
-                        @endif 
+                        @endif
                       </div>
                   </div>
 
@@ -82,19 +82,19 @@
                             <span class="help-block">
                               <strong>Boşluq buraxmayın</strong>
                             </span>
-                        @endif 
+                        @endif
                     </div>
                   </div>
 
-                  <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
+                  <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                     <label class="control-label col-sm-3" for="name">Ad , Soyad<span>*</span></label>
                     <div class="col-sm-9">
                       <input type="text" name="name" class="form-control" id="name" placeholder="İstək məsələsində əlaqə qurulacaq şəxs" value="{{Auth::user()->name}}">
-                      @if ($errors->has('image'))
+                      @if ($errors->has('name'))
                             <span class="help-block">
                               <strong>Boşluq buraxmayın</strong>
                             </span>
-                        @endif 
+                        @endif
                     </div>
                   </div>
 
@@ -134,15 +134,10 @@
                     </div>
                   </div>
 
-                  <div class="form-group{{ $errors->has('deadline') ? ' has-error' : '' }}">
+                  <div class="form-group">
                   <label class="control-label col-sm-3" for="date">İstəyinizin müddəti<span>*</span></label>
                   <div class="col-sm-9">
                     <input name="date" type="date" class="form-control" id="date">
-                      @if ($errors->has('deadline'))
-                            <span class="help-block">
-                              <strong>Boşluq buraxmayın</strong>
-                            </span>
-                        @endif
                   </div>
 
                   <div class="col-sm-2 col-sm-offset-3">
