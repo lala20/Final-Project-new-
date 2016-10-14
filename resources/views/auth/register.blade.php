@@ -2,14 +2,14 @@
 
 @section('content')
    @if (Session::has('user') && Session::has('email'))
-      <?php $name = Session::get('user')?>
-      <?php $username = Session::get('user')?>
-      <?php $email = Session::get('email')?>
+      <?php $name = Session::get('user');?>
+      <?php $username = Session::get('user');?>
+      <?php $email = Session::get('email');?>
 
    @else
-      <?php $name = old('name')?>
-      <?php $username = old('username')?>
-      <?php $email = old('email')?>
+      <?php $name = old('name');?>
+      <?php $username = old('username');?>
+      <?php $email = old('email');?>
 
    @endif
 

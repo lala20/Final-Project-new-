@@ -91,9 +91,16 @@ class PagesController extends Controller
 
 
 
-    public function update(Request $req) //yeniiiiii
+    public function update(Request $data) //yeniiiiii
     {
-      Auth::user()->update($req->all());
+      $dat = [
+            'username' => $data['username'],
+            'name' => $data['name'],
+            'phone' => '+994'.$data['operator'].$data['phone'],
+            'email' => $data['email'],
+            'city' => $data['city']
+        ];
+        Auth::user()->update($dat);
       return redirect('/profil');
     }
     public function desteklerim(){
