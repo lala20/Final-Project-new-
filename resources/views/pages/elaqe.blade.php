@@ -23,7 +23,7 @@
       <div class="row">
         <div class="col-lg-12">
             @if (Session::has('send'))
-                 <div class="alert alert-success" role="alert">{{Session::get('send')}}</div>
+                  <div class="alert alert-success" role="alert">{{Session::get('send')}}</div>
             @endif
           <h1 class="text-center">Bizimlə əlaqə</h1>
           <p>Əlaqə saxlamaq üçün aşağıdakı formu doldurun.</p>
