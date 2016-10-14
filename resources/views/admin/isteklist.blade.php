@@ -6,7 +6,7 @@
 
           <div class="panel panel-default">
               <div class="panel-heading">
-                  Responsive Table Example
+                  Istək siyahısı
               </div>
               <div class="panel-body">
                   <div class="table-responsive">
@@ -14,11 +14,8 @@
                           <thead>
                               <tr>
                                   <th>Status</th>
-                                  <th>id</th>
-                                  <th>user id</th>
-                                  <th>city id</th>
+                                  <th>#</th>
                                   <th>title</th>
-                                  <th>status</th>
                                   <th>about</th>
                                   <th>location</th>
                                   <th>name</th>
@@ -34,34 +31,47 @@
                               @if($istek->type_id=='2')
                               <tr>
                                   @if($istek->status=='0')
-                                    <td><a href="{{url('/activate/'.$istek->id)}}">Aktiləşdir</a></td>
+                                    <td><a class="btn btn-success" href="{{url('/activate/'.$istek->id)}}">Aktivləşdir</a></td>
 
-                                  @else($istek->status=='1')
-                                    <td><a href="{{url('/deactivate/'.$istek->id)}}">Deaktivləşdir</a></td>
+                                  @else
+                                    <td><a class="btn btn-warning" href="{{url('/deactivate/'.$istek->id)}}">Deaktivləşdir</a></td>
                                   @endif
                                   <td>{{$istek->id}}</td>
-                                  <td>{{$istek->user_id}}</td>
-                                  <td>{{$istek->city_id}}</td>
                                   <td>{{$istek->title}}</td>
-                                  <td>{{$istek->status}}</td>
-                                  <td>{{substr($istek->about, 0,10)}}</td>
+                                  <td><a href="#" data-toggle="modal" data-target="#{{$istek->id}}">{{substr($istek->about, 0,10)}}</a></td>
                                   <td>{{substr($istek->location, 0,10)}}</td>
                                   <td>{{$istek->name}}</td>
                                   <td>{{$istek->phone}}</td>
                                   <td>{{$istek->email}}</td>
-                                  <td>{{$istek->image}}</td>
+                                  <td><img style="width:50px; height:50px" src="{{url('image/'.$istek->image)}}"/></td>
                                   <td>{{$istek->org}}</td>
                                   <td>{{$istek->nov}}</td>
                               </tr>
+                              <div id="{{$istek->id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                      <h4 class="modal-title" id="myModalLabel">{{$istek->title}}</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      {{$istek->about}}
+                                    </div>
+                                    <div class="modal-footer">
+                                       <img class="img-responsive " src="{{url('image/'.$istek->image)}}"/>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             @endif
                             @endforeach
-
                           </tbody>
                       </table>
                   </div>
               </div>
           </div>
-
       </div>
   </div>
 @endsection

@@ -46,10 +46,7 @@
 
                                 <tr>
                                 <div class="input-group">
-{{--            
-
- --}}                            <td>Telefon Nömrəniz *</td>
-
+                           <td>Telefon Nömrəniz *</td>
                                    <td>
                                    <div class="input-group">
 
@@ -57,7 +54,7 @@
                                     <input type="hidden" id="profoperator" name="operator" value="{{substr(Auth::user()->phone, 4,2)}}">
                                     +994
                                         <select id="profilnumb">
-                                        <?php 
+                                        <?php
                                         $nom = substr(Auth::user()->phone, 4,2);
                                          ?>
                                               <option {{$nom=='55' ? 'selected' : '' }}>55</option>
@@ -158,7 +155,7 @@
 
                                 <p>Ulduz(*) ilə işarələnmiş hissələr boş buraxılmamalıdır</p>
 
-                                <input class="btn btn-primary" type="submit" name="submit" value="Düzəlt">
+                                <input class="btn btn-primary" type="submit" name="submit" value="Yenilə">
                     </div>
                 </div>
             </div>

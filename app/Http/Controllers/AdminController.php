@@ -32,7 +32,6 @@ class AdminController extends Controller
       'password' => 'required|min:3|max:100',
   ]);
 
-    //  return view('admin.index');
     if ($validator->fails() ) {
         return redirect('/alfagen/login')
                 ->withErrors($validator)

@@ -109,6 +109,13 @@ class PagesController extends Controller
 
     public function elaqesave(Request $request)
     {
+      $this->validate($request, [
+         'name' => 'required',
+         'surname' => 'required',
+         'email' => 'required',
+         'message' => 'required',
+      ]);
+
       $send = new Contact;
       $send->create($request->all());
       Session::flash('send', 'İsmarıcınız müvəffəqiyyətlə göndərildi.');
