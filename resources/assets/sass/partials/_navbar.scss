@@ -118,7 +118,7 @@
           transition: all .3s ease;
         }
         a:hover{
-          color: #2AB6FF !important;
+          color: #2AB6FF;
         }
         li:last-child{
           a{           // Google + iconunu və Daxil ol sözünü eyni səviyyəyə gətirmək üçün padding:5 verilib.
@@ -131,5 +131,50 @@
         }
       }
     }
+      // REGISTER MODAL
+      
+    .modal-body{
+      .col-lg-8{
+         margin-bottom: 20px;
+         a{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            color: white;
+            i{
+               color: white !important;
+            }
+         }
+      }
+         .col-lg-8:first-child{ // Modal - google plus
+            background: #DD4C3B;
+
+            &:hover{
+               a{
+                  transform: scale(1.6);
+                  color: white !important;
+               }
+            }
+         }
+         .col-lg-8:nth-child(2){ // Modal - Facebook
+            background: #3C5A99;
+
+            &:hover{
+               a{
+                  transform: scale(1.6);
+                  color: white !important;
+               }
+            }
+         }
+         .col-lg-8:nth-child(3){ // Modal - email
+            background: #262827;
+
+            &:hover{
+               a{
+                  transform: scale(1.6);
+                  color: white !important;
+               }
+            }
+         }
+   }
 }
 // NAVBAR SECTION END

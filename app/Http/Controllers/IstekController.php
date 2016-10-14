@@ -40,7 +40,6 @@ class IstekController extends Controller
       Session::flash('istekadded' , "İstəyiniz uğurla əlavə olundu və yoxlamadan keçəndən sonra dərc olunacaq.");
         $this->validate($req, [
         'title' => 'required',
-            'view' => 'required',
             'about' => 'required',
             'location' => 'required',
             'lat' => 'required',
@@ -49,9 +48,7 @@ class IstekController extends Controller
             'phone' => 'required',
             'email' => 'required',
             'image' => 'required',
-            'org' => 'required',
             'nov' => 'required',
-            'deadline' => 'required',
     ]);
 
 

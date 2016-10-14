@@ -26,11 +26,11 @@
                   <div class="alert alert-success" role="alert">{{Session::get('send')}}</div>
             @endif
           <h1 class="text-center">Bizimlə əlaqə</h1>
-          <p>Əlaqə saxlamaq üçün aşağıdakı formu doldurun.</p>
+          <p class="text-center">Əlaqə saxlamaq üçün aşağıdakı formu doldurun.</p>
         </div>
          <form class="" action="{{url('/elaqe')}}" method="post">
          {{csrf_field()}}
-           <div class="col-md-7">
+           <div class="col-md-7 col-md-offset-2">
               {{-- name input --}}
              <div class="col-md-2">
                <label for="contactName">Ad *</label>
@@ -59,7 +59,7 @@
              <div class="col-md-10">
                  <textarea id="contactMessage" rows="10" class="form-control" type="text" name="message"></textarea>
              </div>
-             <div class="col-md-4 col-md-offset-4">
+             <div class="col-md-4 col-md-offset-5">
                 <input type="submit" name="send" value="Göndər" class="btn btn-success form-control">
              </div>
 

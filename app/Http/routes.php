@@ -25,6 +25,14 @@ Route::group(['middleware' => 'admin'],function(){
   Route::get('/alfagen/logout', 'AdminController@logout');
 });
 
+//Google login
+Route::get('auth/google', 'GoogleController@redirectToProvider')->name('google.login');
+Route::get('auth/google/callback', 'GoogleController@handleProviderCallback');
+
+//Facebook login
+Route::get('facebook', 'FacebookController@redirectToProvider')->name('facebook.login');
+Route::get('facebook/callback', 'FacebookController@handleProviderCallback');
+
 Route::get('/', 'PagesController@index');
 Route::post('/', 'PagesController@index');
 
