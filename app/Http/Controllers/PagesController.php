@@ -41,7 +41,11 @@ class PagesController extends Controller
     }
 
     public function single($id){
+
         $single = Elan::find($id);
+        if ($single->status == 0) {
+          return redirect('/');
+        }
         $single->view = $single->view+1;
         $date = $single->deadline;
         $dbdate=new DateTime($date);

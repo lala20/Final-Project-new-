@@ -31,25 +31,38 @@
 								@endif
 	                <div class="profilime panel panel-primary">
 	                    <div class="panel-heading">
-	                        <h4><i class="fa fa-thumb-tack" aria-hidden="true"></i> Ehtiyaclarim</h4>
+	                        <h4><i class="fa fa-thumb-tack" aria-hidden="true"></i> Ehtiyaclarım</h4>
 	                    </div>
 	                    <div class="panel-body">
 	                        <table class="table table-bordered">
 	                            <tbody>
 	                            	<tr>
+																	<th>Status</th>
 	                            		<th>Başlıq</th>
 	                            		<th>Haqqında</th>
 																	<th>Şəkil</th>
-																	<th>Tənzimləmə</th>
+																	<th style="width:151px;">Tənzimləmə</th>
 	                            	</tr>
 	                            	@foreach($istekler as $istek)
-	                            		@if($istek->status == '1' && $istek->user_id == Auth::user()->id && $istek->type_id == '2')
+	                            		@if($istek->user_id == Auth::user()->id && $istek->type_id == '2')
+																		@php
+																			$derc_status = ' Dərc olunmayıb';
+																			$derc_reng = 'alert-danger';
+																			if ($istek->status==1) {
+																				$derc_status = " Dərc olunub";
+																				$derc_reng = 'alert-success';
+																			}
+																		@endphp
 	                            			<tr>
-	                            				<td>{{$istek->title}}</td>
-																			<td>{{substr($istek->about,0,100)}}...</td>
-	                            				<td><img class="img-responsive" src="{{url('image/'.$istek->image)}}"></td>
-	                            				<td><a class="btn btn-danger" href="{{url('/isteksil/'.$istek->id)}}">Sil</a>
-																<a class="btn btn-info" href="{{url('/single/'.$istek->id)}}">Oxu</a></td>
+																			<td class="{{$derc_reng}}">{{$derc_status}}</td>
+	                            				<td class="{{$derc_reng}}">{{$istek->title}} </td>
+																			<td class="{{$derc_reng}}">{{substr($istek->about,0,70)}}...</td>
+	                            				<td class="{{$derc_reng}}"><img class="img-responsive" src="{{url('image/'.$istek->image)}}"></td>
+	                            				<td class="{{$derc_reng}}">
+																				<a class="btn btn-danger" href="{{url('/isteksil/'.$istek->id)}}">Sil</a>
+																				<a class="btn btn-info" href="{{url('/single/'.$istek->id)}}">Oxu</a>
+																				<a class="btn btn-warning" href="{{url('/istekedit/'.$istek->id)}}">Dəyişdir</a>
+																			</td>
 	                            			</tr>
 	                            			@else
 	                            			{{-- <tr>
