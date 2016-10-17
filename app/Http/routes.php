@@ -65,7 +65,6 @@ Route::get('/desteklerim', 'DestekController@desteklerim');
 Route::get('/isteklerim', 'IstekController@isteklerim');
 
 Route::get('/elaqe', 'PagesController@elaqe');
-
 Route::post('/elaqe', 'PagesController@elaqesave');
 
 Route::get('/single/{id}', 'PagesController@single');
