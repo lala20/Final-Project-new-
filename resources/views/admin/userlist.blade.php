@@ -25,10 +25,9 @@
                                           <table class="table table-striped table-bordered table-hover">
                                               <thead>
                                                   <tr>
-                                                      <th>id</th>
-                                                      <th>city Id</th>
+                                                      <th>#</th>
                                                       <th>First Name</th>
-                                                      <th>Last Name</th>
+                                                      <th>Phone Number</th>
                                                       <th>User Name</th>
                                                       <th>Email ID.</th>
                                                   </tr>
@@ -37,7 +36,6 @@
                                                 @foreach($users as $user)
                                                   <tr>
                                                       <td>{{$user->id}}</td>
-                                                      <td>{{$user->city_id}}</td>
                                                       <td>{{$user->username}}</td>
                                                       <td>{{$user->phone}}</td>
                                                       <td>{{$user->name}}</td>

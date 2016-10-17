@@ -41,7 +41,11 @@ class PagesController extends Controller
     }
 
     public function single($id){
+
         $single = Elan::find($id);
+        if ($single->status == 0) {
+          return redirect('/');
+        }
         $single->view = $single->view+1;
         $date = $single->deadline;
         $dbdate=new DateTime($date);
@@ -91,9 +95,20 @@ class PagesController extends Controller
 
 
 
+<<<<<<< HEAD
     public function update(Request $req)
+=======
+    public function update(Request $data) //yeniiiiii
+>>>>>>> b9bd32b8017e4be81cc1eca59fe70d3d385d600b
     {
-      Auth::user()->update($req->all());
+      $dat = [
+            'username' => $data['username'],
+            'name' => $data['name'],
+            'phone' => '+994'.$data['operator'].$data['phone'],
+            'email' => $data['email'],
+            'city' => $data['city']
+        ];
+        Auth::user()->update($dat);
       return redirect('/profil');
     }
     public function desteklerim(){
@@ -102,6 +117,7 @@ class PagesController extends Controller
 
     public function elaqesave(Request $request)
     {
+<<<<<<< HEAD
       //   $this->validate($request, [
       //     'name' => 'required',
       //     'surname' => 'required',
@@ -119,6 +135,17 @@ class PagesController extends Controller
         $message->to('alfagen4@gmail.com');
       });
 
+=======
+      $this->validate($request, [
+         'name' => 'required',
+         'surname' => 'required',
+         'email' => 'required',
+         'message' => 'required',
+      ]);
+
+      $send = new Contact;
+      $send->create($request->all());
+>>>>>>> b9bd32b8017e4be81cc1eca59fe70d3d385d600b
       Session::flash('send', 'İsmarıcınız müvəffəqiyyətlə göndərildi.');
       return back();
     }

@@ -1,15 +1,27 @@
 @extends('pages.layout')
 
 @section('content')
+  <section id="istek">
+      <div class="container">
+      <ul>
+          <li class="pull-left"> <h1> <span>Qeydiyyat</span></h1></li>
+          <li class="pull-right">
+               <a href="{{url('/')}}">ANA SƏHİFƏ </a>
+              <span> / </span>
+              <a href="{{url('/register')}}"> Qeydiyyat</a>
+          </li>
+      </ul>
+      </div>
+  </section>
    @if (Session::has('user') && Session::has('email'))
-      <?php $name = Session::get('user')?>
-      <?php $username = Session::get('user')?>
-      <?php $email = Session::get('email')?>
+      <?php $name = Session::get('user');?>
+      <?php $username = Session::get('user');?>
+      <?php $email = Session::get('email');?>
 
    @else
-      <?php $name = old('name')?>
-      <?php $username = old('username')?>
-      <?php $email = old('email')?>
+      <?php $name = old('name');?>
+      <?php $username = old('username');?>
+      <?php $email = old('email');?>
 
    @endif
 

@@ -36,6 +36,30 @@ class IstekController extends Controller
         return back();
       }
 
+      public function edit($id){
+        $istekedit = Elan::find($id);
+        return view('pages.istekedit' , compact('istekedit'));
+      }
+
+      public function update($id , Request $req){
+        Session::flash('istekedited' , "İstəyiniz uğurla dəyişdirildi və yoxlamadan keçəndən sonra dərc olunacaq.");
+        $istekedit = Elan::find($id);
+        $istekedit->title = $req->title;
+        $istekedit->location = $req->location;
+        $istekedit->lat = $req->lat;
+        $istekedit->lng = $req->lng;
+        $istekedit->about = $req->about;
+        $istekedit->name = $req->name;
+        $istekedit->email = $req->email;
+        $istekedit->org = $req->org;
+        $istekedit->nov = $req->nov;
+        $istekedit->deadline = $req->date;
+        $istekedit->phone = $req->phone;
+        $istekedit->status = 0;
+        $istekedit->update();
+        return redirect("/istekedit/$istekedit->id");
+      }
+
     public function store(Request $req){
       Session::flash('istekadded' , "İstəyiniz uğurla əlavə olundu və yoxlamadan keçəndən sonra dərc olunacaq.");
         $this->validate($req, [

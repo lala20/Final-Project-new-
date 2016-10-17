@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Be right back.</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+        <title>Error 404</title>
 
         <style>
             html, body {
@@ -34,13 +32,14 @@
             .title {
                 font-size: 72px;
                 margin-bottom: 40px;
+                color: black;
             }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Be right back.</div>
+                <div class="title">Bu səhifə tapılmadı.</div>
             </div>
         </div>
     </body>

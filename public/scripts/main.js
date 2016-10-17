@@ -28,6 +28,14 @@
 
  });
 
+   var numb1;
+ $('#profilnumb').change(function(){
+   numb1 = $(this).val();
+   $('#profoperator').attr('value',numb1);
+   return false;
+
+ });
+
 
 });
 
