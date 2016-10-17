@@ -50,11 +50,11 @@
                <label for="contactEmail">Email *</label>
              </div>
              <div class="col-md-10">
-                 <input id="contactEmail" class="form-control" type="text" name="email">
+                 <input id="contactEmail" class="form-control" type="email" name="email">
              </div>
              {{-- message input --}}
              <div class="col-md-2">
-               <label for="contactMessage">Mesaj *</label>
+               <label for="contactMessage">İsmarıc *</label>
              </div>
              <div class="col-md-10">
                  <textarea id="contactMessage" rows="10" class="form-control" type="text" name="message"></textarea>

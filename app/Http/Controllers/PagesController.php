@@ -12,7 +12,7 @@ use App\Contact;
 use Auth;
 use DateTime;
 use Session;
-
+use Mail;
 class PagesController extends Controller
 {
   public function index()
@@ -91,7 +91,7 @@ class PagesController extends Controller
 
 
 
-    public function update(Request $req) //yeniiiiii
+    public function update(Request $req)
     {
       Auth::user()->update($req->all());
       return redirect('/profil');
@@ -102,8 +102,23 @@ class PagesController extends Controller
 
     public function elaqesave(Request $request)
     {
-      $send = new Contact;
-      $send->create($request->all());
+      //   $this->validate($request, [
+      //     'name' => 'required',
+      //     'surname' => 'required',
+      //     'email' => 'required',
+      //     'message' => 'min:10'
+      // ]);
+      $data=[
+        'name' => $request->name,
+        'surname' => $request->surname,
+        'email' => $request->email,
+        'contactMessage' => $request->message,
+      ];
+      Mail::send('pages.contactMail',$data, function($message) use ($data){
+        $message->from($data['email']);
+        $message->to('alfagen4@gmail.com');
+      });
+
       Session::flash('send', 'İsmarıcınız müvəffəqiyyətlə göndərildi.');
       return back();
     }

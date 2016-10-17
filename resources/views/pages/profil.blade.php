@@ -14,8 +14,6 @@
 				     @endif
               <form id="target" action="{{url('/avatar')}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
-                                <!-- yeniiiiiiiiiiiii -->
-                    {{-- <input type="file" name="image" id="file" value="hello"> --}}
 										<label for="file"><i class="fa fa-arrow-circle-o-up"></i> Yüklə</label>
 										<input type="file" name="image" id="file" class="hidden">
                 </form>
