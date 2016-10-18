@@ -39,8 +39,6 @@ class IstekController extends Controller
 
       public function edit($id){
         $istekedit = Elan::find($id);
-      //   dd($istekedit);
-      //   return view('pages.istekedit',compact('istekedit'));
       return view('pages.istekedit',compact('istekedit'));
       }
 

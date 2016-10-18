@@ -34,24 +34,78 @@
                             <div class="panel-body">
                                 <table class="table table-bordered">
                                     <tbody>
-                                        <tr>
-                                            <th>Başlıq</th>
-                                            <th>Haqqında</th>
-                                            <th>Şəkil</th>
-                                            <th>Bax & Sil</th>
-                                        </tr>
+                                       <tr>
+                                         <th>Status</th>
+                                         <th>Başlıq</th>
+                                         <th>Haqqında</th>
+                                         <th>Şəkil</th>
+                                         <th style="width:151px;">Tənzimləmə</th>
+                                      </tr>
                                         @foreach($destekler as $destek)
-                                            @if($destek->status == '1' && $destek->user_id = Auth::user()->id && $destek->type_id == '1')
-                                                <tr>
-                                                    <td>{{$destek->title}}</td>
-                                                    <td>{{substr($destek->about,0,80)}}</td>
-                                                    <td><img src="{{url("image/$destek->image")}}"</>
-                                                    <td>
-                                                      <a class="btn btn-primary" href="{{url('/single/'.$destek->id)}}">Bax</a>
-                                                      <a class="btn btn-danger" href="{{url('/desteksil/'.$destek->id)}}">Sil</a
-                                                    </td>
-                                                </tr>
-                                            @endif
+                                           @if($destek->user_id == Auth::user()->id && $destek->type_id == '1')
+                                                           @php
+                                                              $derc_status = ' Dərc olunmayıb';
+                                                              $derc_reng = 'alert-danger';
+                                                              if ($destek->status==1) {
+                                                                 $derc_status = " Dərc olunub";
+                                                                 $derc_reng = 'alert-success';
+                                                              }
+                                                           @endphp
+                                            <tr>
+                                                              <td class="{{$derc_reng}}">{{$derc_status}}</td>
+                                               <td class="{{$derc_reng}}">{{$destek->title}} </td>
+                                                              <td class="{{$derc_reng}}">{{substr($destek->about,0,70)}}...</td>
+                                               <td class="{{$derc_reng}}"><img class="img-responsive" src="{{url('image/'.$destek->image)}}"></td>
+                                               <td class="{{$derc_reng}}">
+                                                                 <a class="btn btn-danger" href="" data-toggle="modal" data-target="#sil">Sil</a>
+                                                                 <a class="btn btn-info" href="" data-toggle="modal" data-target="#{{$destek->id}}">Oxu</a>
+                                                                 <a class="btn btn-warning" href="{{url('/destekedit/'.$destek->id)}}">Dəyişdir</a>
+                                                              </td>
+                                            </tr>
+                                            {{-- Sil buttonu ucun modal --}}
+                                               <div id="sil" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                 <div class="modal-dialog modal-sm">
+                                                   <div class="modal-content">
+                                                     <div class="modal-header">
+                                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                         <span aria-hidden="true">&times;</span>
+                                                       </button>
+                                                       <h4 class="modal-title text-center" id="myModalLabel">Əminsinizmi?</h4>
+                                                     </div>
+                                                     <div class="modal-body text-center">
+                                                        <button class="btn btn-primary" type="button" class="close" data-dismiss="modal" aria-label="Close">Xeyir
+                                                       </button>
+                                                       <a class="btn btn-danger" href="{{url('/isteksil/'.$destek->id)}}">Bəli</a>
+                                                     </div>
+                                                   </div>
+                                                 </div>
+                                               </div>
+                                            {{-- End of modal --}}
+                                            {{-- Oxu buttonu ucun modal --}}
+                                               <div id="{{$destek->id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                 <div class="modal-dialog modal-lg">
+                                                   <div class="modal-content">
+                                                     <div class="modal-header">
+                                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                         <span aria-hidden="true">&times;</span>
+                                                       </button>
+                                                       <h4 class="modal-title" id="myModalLabel">{{$destek->title}}</h4>
+                                                     </div>
+                                                     <div class="modal-body">
+                                                       {{$destek->about}}
+                                                     </div>
+                                                     <div class="modal-footer">
+                                                       <img style="width:100%; height:100%;" src="{{url('image/'.$destek->image)}}">
+                                                     </div>
+                                                   </div>
+                                                 </div>
+                                               </div>
+                                               {{-- End of modal --}}
+                                            @else
+                                            {{-- <tr>
+                                                    <td>Hələki qeyd yoxdur</td>
+                                            </tr> --}}
+                                         @endif
                                         @endforeach
                                     </tbody>
                                 </table>

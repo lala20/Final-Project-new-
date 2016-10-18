@@ -37,11 +37,11 @@
 	                        <table class="table table-bordered">
 	                            <tbody>
 	                            	<tr>
-																	<th>Status</th>
+												<th>Status</th>
 	                            		<th>Başlıq</th>
 	                            		<th>Haqqında</th>
-																	<th>Şəkil</th>
-																	<th style="width:151px;">Tənzimləmə</th>
+												<th>Şəkil</th>
+												<th style="width:151px;">Tənzimləmə</th>
 	                            	</tr>
 	                            	@foreach($istekler as $istek)
 	                            		@if($istek->user_id == Auth::user()->id && $istek->type_id == '2')

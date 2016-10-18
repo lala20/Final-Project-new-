@@ -82,4 +82,52 @@ class DestekController extends Controller
         Auth::user()->elanlar()->create($data);
         return redirect('/desteklerim');
     }
+
+    public function edit($id){
+     $destekedit = Elan::find($id);
+   return view('pages.destekedit',compact('destekedit'));
+   }
+
+   public function update($id , Request $req){
+      //validate
+      $this->validate($req, [
+      'title' => 'required',
+          'about' => 'required',
+          'location' => 'required',
+          'lat' => 'required',
+          'lng' => 'required',
+          'name' => 'required',
+          'phone' => 'required',
+          'email' => 'required',
+          'nov' => 'required',
+  ]);
+   if ($req->image == '') {
+      $sekil = Elan::find($id);
+      $photoname = $sekil->image;
+   }else{
+  // image upload
+  $dir='image';
+  $phototype=$req->file('image')->getClientOriginalExtension();
+  $photoname=time().'.'.$phototype;
+  $req->file('image')->move(public_path('image'),$photoname);
+
+}
+     Session::flash('destekedited' , "Dəstəyiniz uğurla dəyişdirildi və yoxlamadan keçəndən sonra dərc olunacaq.");
+     $destekedit = Elan::find($id);
+     $destekedit->title = $req->title;
+     $destekedit->location = $req->location;
+     $destekedit->lat = $req->lat;
+     $destekedit->lng = $req->lng;
+     $destekedit->about = $req->about;
+     $destekedit->image = $photoname;
+     $destekedit->name = $req->name;
+     $destekedit->email = $req->email;
+     $destekedit->org = $req->org;
+     $destekedit->nov = $req->nov;
+     $destekedit->deadline = $req->date;
+     $destekedit->phone = $req->phone;
+     $destekedit->status = 0;
+     $destekedit->update();
+     return redirect("/destekedit/$destekedit->id");
+   }
 }

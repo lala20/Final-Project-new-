@@ -46,6 +46,10 @@ Route::get('/istekedit/{id}', 'IstekController@edit');
 
 Route::patch('/istekedit/{id}', 'IstekController@update');
 
+Route::get('/destekedit/{id}', 'DestekController@edit');
+
+Route::patch('/destekedit/{id}', 'DestekController@update');
+
 Route::get('/destek', 'DestekController@show');
 
 Route::post('/destek', 'DestekController@store');
