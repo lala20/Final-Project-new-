@@ -31,7 +31,8 @@ class ActivationService
         $token = $this->activationRepo->createActivation($user);
 
         $link = route('user.activate', $token);
-        $message = sprintf('Activate account <a href="%s">%s</a>', $link, $link);
+        $mylink = '<a href="%s"></a>';
+        $message = sprintf('Salam '.$user->name.' Sizin aktivasiya linkiniz: %s',$link, $link);
 
         $this->mailer->raw($message, function (Message $m) use ($user) {
             $m->to($user->email)->subject('Activation mail');

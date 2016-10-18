@@ -37,6 +37,7 @@ class DestekController extends Controller
          public function delete($id) //yeni gunel
       {
         $desteksil=Elan::find($id);
+        unlink('image/'.$desteksil->image);
         $desteksil->delete();
         return back();
       }
@@ -59,7 +60,7 @@ class DestekController extends Controller
       Session::flash('destekadded' , "Dəstəyiniz uğurla əlavə olundu və yoxlamadan keçəndən sonra dərc olunacaq.");
       $direction='image';
       $filetype=$req->file('image')->getClientOriginalExtension();
-      $filename=rand(11111,99999).'.'.$filetype;
+      $filename=time().'.'.$filetype;
       $req->file('image')->move(public_path('image'),$filename);
 
       $data = [

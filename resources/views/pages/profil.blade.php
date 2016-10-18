@@ -14,14 +14,8 @@
 				    @endif
               <form id="target" action="{{url('/avatar')}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
-<<<<<<< HEAD
 										<label for="file"><i class="fa fa-arrow-circle-o-up"></i> Yüklə</label>
 										<input type="file" name="image" id="file" class="hidden">
-=======
-
-						<label for="file"><i class="fa fa-arrow-circle-o-up"></i> Yüklə</label>
-						<input type="file" name="image" id="file" class="hidden">
->>>>>>> b9bd32b8017e4be81cc1eca59fe70d3d385d600b
                 </form>
                <ul class="list-unstyled">
                    <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><b> İstifadəçinin məlumatları</b></a></li>

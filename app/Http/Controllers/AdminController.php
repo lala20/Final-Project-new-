@@ -17,7 +17,14 @@ class AdminController extends Controller
 
   public function index()
   {
-     return view('admin.index');
+     $users=User::all();
+     $istek = Elan::all()->where('type_id', 2);
+     $isteksayi = count($istek);
+
+     $destek = Elan::all()->where('type_id', 1);
+     $desteksayi = count($destek);
+
+     return view('admin.index', compact('users','isteksayi','desteksayi'));
   }
   public function login()
   {
@@ -58,7 +65,14 @@ class AdminController extends Controller
 
   public function lists()
   {
-     return view('admin.index');
+     $users=User::all();
+     $istek = Elan::all()->where('type_id', 2);
+     $isteksayi = count($istek);
+
+     $destek = Elan::all()->where('type_id', 1);
+     $desteksayi = count($destek);
+
+     return view('admin.index', compact('users','isteksayi','desteksayi'));
   }
 
   public function desteklist()

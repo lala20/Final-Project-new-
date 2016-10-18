@@ -17,5 +17,13 @@ class DatabaseSeeder extends Seeder
           'email' => 'alfagen4@gmail.com',
           'password' =>Hash::make('destekol'),
         ]);
+
+        DB::table('elantypes')->insert([
+           'name' => 'destek',
+        ]);
+
+        DB::table('elantypes')->insert([
+           'name' => 'istek',
+        ]);
     }
 }

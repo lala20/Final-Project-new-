@@ -82,7 +82,7 @@ class PagesController extends Controller
     {
       $direction='image/';
       $filetype=$req->file('image')->getClientOriginalExtension();
-      $filename=rand(11111,99999).'.'.$filetype;
+      $filename=time().'.'.$filetype;
       $req->file('image')->move(public_path('image/'),$filename);
 
       $data = [
@@ -114,6 +114,12 @@ class PagesController extends Controller
 
     public function elaqesave(Request $request)
     {
+      $this->validate($request, [
+         'name' => 'required',
+         'surname' => 'required',
+         'email' => 'required',
+         'message' => 'required',
+      ]);
       $data=[
         'name' => $request->name,
         'surname' => $request->surname,
@@ -124,12 +130,7 @@ class PagesController extends Controller
         $message->from($data['email']);
         $message->to('alfagen4@gmail.com');
       });
-      $this->validate($request, [
-         'name' => 'required',
-         'surname' => 'required',
-         'email' => 'required',
-         'message' => 'required',
-      ]);
+
 
       $send = new Contact;
       $send->create($request->all());

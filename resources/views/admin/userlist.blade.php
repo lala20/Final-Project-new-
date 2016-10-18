@@ -25,7 +25,6 @@
                                           <table class="table table-striped table-bordered table-hover">
                                               <thead>
                                                   <tr>
-                                                      <th>#</th>
                                                       <th>First Name</th>
                                                       <th>Phone Number</th>
                                                       <th>User Name</th>
@@ -35,7 +34,6 @@
                                               <tbody>
                                                 @foreach($users as $user)
                                                   <tr>
-                                                      <td>{{$user->id}}</td>
                                                       <td>{{$user->username}}</td>
                                                       <td>{{$user->phone}}</td>
                                                       <td>{{$user->name}}</td>

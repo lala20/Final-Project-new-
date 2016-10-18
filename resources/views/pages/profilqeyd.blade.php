@@ -59,11 +59,50 @@
 																			<td class="{{$derc_reng}}">{{substr($istek->about,0,70)}}...</td>
 	                            				<td class="{{$derc_reng}}"><img class="img-responsive" src="{{url('image/'.$istek->image)}}"></td>
 	                            				<td class="{{$derc_reng}}">
-																				<a class="btn btn-danger" href="{{url('/isteksil/'.$istek->id)}}">Sil</a>
-																				<a class="btn btn-info" href="{{url('/single/'.$istek->id)}}">Oxu</a>
+																				<a class="btn btn-danger" href="" data-toggle="modal" data-target="#sil">Sil</a>
+																				<a class="btn btn-info" href="" data-toggle="modal" data-target="#{{$istek->id}}">Oxu</a>
 																				<a class="btn btn-warning" href="{{url('/istekedit/'.$istek->id)}}">Dəyişdir</a>
 																			</td>
 	                            			</tr>
+													{{-- Sil buttonu ucun modal --}}
+														<div id="sil" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+														  <div class="modal-dialog modal-sm">
+														    <div class="modal-content">
+														      <div class="modal-header">
+														        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														          <span aria-hidden="true">&times;</span>
+														        </button>
+														        <h4 class="modal-title text-center" id="myModalLabel">Əminsinizmi?</h4>
+														      </div>
+														      <div class="modal-body text-center">
+																	<button class="btn btn-primary" type="button" class="close" data-dismiss="modal" aria-label="Close">Xeyir
+ 														        </button>
+														        <a class="btn btn-danger" href="{{url('/isteksil/'.$istek->id)}}">Bəli</a>
+														      </div>
+														    </div>
+														  </div>
+														</div>
+													{{-- End of modal --}}
+													{{-- Oxu buttonu ucun modal --}}
+														<div id="{{$istek->id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+														  <div class="modal-dialog modal-lg">
+														    <div class="modal-content">
+														      <div class="modal-header">
+														        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														          <span aria-hidden="true">&times;</span>
+														        </button>
+														        <h4 class="modal-title" id="myModalLabel">{{$istek->title}}</h4>
+														      </div>
+														      <div class="modal-body">
+														        {{$istek->about}}
+														      </div>
+														      <div class="modal-footer">
+														        <img style="width:100%; height:100%;" src="{{url('image/'.$istek->image)}}">
+														      </div>
+														    </div>
+														  </div>
+														</div>
+														{{-- End of modal --}}
 	                            			@else
 	                            			{{-- <tr>
 	                                  			  <td>Hələki qeyd yoxdur</td>

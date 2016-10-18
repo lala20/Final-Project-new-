@@ -24,7 +24,7 @@
                    @if (Session::has('istekedited'))
                     <div class="alert alert-success" role="alert">{{Session::get('istekedited')}}</div>
                   @endif
-                  <form action="/istekedit/{{$istekedit->id}}" method="POST" enctype="multipart/form-data">
+                  <form action="{{url('/istekedit/'.$istekedit->id)}}" method="POST" enctype="multipart/form-data">
                       {{csrf_field()}}
                       {{ method_field('PATCH')}}
                       <input type="hidden" id="lat" name="lat" value="{{$istekedit->lat}}">
@@ -74,15 +74,10 @@
                       </div>
                   </div>
 
-                  <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
+                  <div class="form-group">
                     <label class="control-label col-sm-3" for="pic">Şəkil<span>*</span></label>
                     <div class="col-sm-9">
-                      <input type="file" name="image" class="form-control" id="pic" value="{{$istekedit->image}}">
-                    @if ($errors->has('image'))
-                            <span class="help-block">
-                              <strong>Boşluq buraxmayın</strong>
-                            </span>
-                        @endif
+                      <input type="file" name="image" class="form-control" id="pic" value="">
                     </div>
                   </div>
 
@@ -151,6 +146,5 @@
   <script src="{{url('/scripts/vendors/jquery.js')}}"></script>
 
   <script type="text/javascript" src="{{url('/scripts/main.js')}}"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&libraries=places&callback=initAutocomplete"
-         async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&libraries=places&callback=initAutocomplete" async defer></script>
 @endsection

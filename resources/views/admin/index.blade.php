@@ -17,11 +17,11 @@
                     <div class="col-md-3 col-sm-12 col-xs-12">
                         <div class="panel panel-primary text-center no-boder bg-color-red">
                             <div class="panel-body">
-                                <i class="fa fa fa-comments fa-5x"></i>
-                                <h3>15,823 </h3>
+                                <i class="fa fa-yelp fa-5x"></i>
+                                <h3>{{$desteksayi}}</h3>
                             </div>
                             <div class="panel-footer back-footer-red">
-                                Serhler
+                                Dəstək sayı
                             </div>
                         </div>
                     </div>
@@ -29,10 +29,21 @@
                         <div class="panel panel-primary text-center no-boder bg-color-brown">
                             <div class="panel-body">
                                 <i class="fa fa-users fa-5x"></i>
-                                <h3>36,752 </h3>
+                                <h3>{{count($users)}}</h3>
                             </div>
                             <div class="panel-footer back-footer-brown">
                                 Istifadeciler
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-red">
+                            <div class="panel-body">
+                                <i class="fa fa-map-marker fa-5x"></i>
+                                <h3>{{$isteksayi}}</h3>
+                            </div>
+                            <div class="panel-footer back-footer-red">
+                                İstək sayı
                             </div>
                         </div>
                     </div>
@@ -46,14 +57,13 @@
 
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                Responsive Table Example
+                                User list
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered table-hover">
                                         <thead>
                                             <tr>
-                                                <th>S No.</th>
                                                 <th>First Name</th>
                                                 <th>Last Name</th>
                                                 <th>User Name</th>
@@ -61,49 +71,14 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>John</td>
-                                                <td>Doe</td>
-                                                <td>John15482</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Kimsila</td>
-                                                <td>Marriye</td>
-                                                <td>Kim1425</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Rossye</td>
-                                                <td>Nermal</td>
-                                                <td>Rossy1245</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Richard</td>
-                                                <td>Orieal</td>
-                                                <td>Rich5685</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Jacob</td>
-                                                <td>Hielsar</td>
-                                                <td>Jac4587</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Wrapel</td>
-                                                <td>Dere</td>
-                                                <td>Wrap4585</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-
+                                           @foreach($users as $user)
+                                             <tr>
+                                                <td>{{$user->username}}</td>
+                                                <td>{{$user->phone}}</td>
+                                                <td>{{$user->name}}</td>
+                                                <td>{{$user->email}}</td>
+                                             </tr>
+                                           @endforeach
                                         </tbody>
                                     </table>
                                 </div>

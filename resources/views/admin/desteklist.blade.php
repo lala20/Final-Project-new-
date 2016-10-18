@@ -14,7 +14,6 @@
                           <thead>
                               <tr>
                                   <th>status</th>
-                                  <th>#</th>
                                   <th>title</th>
                                   <th>about</th>
                                   <th>location</th>
@@ -35,7 +34,6 @@
                                 @else
                                   <td><a class="btn btn-warning" href="{{url('/deactivate/'.$destek->id)}}">Deaktivləşdir</a></td>
                                 @endif
-                                  <td>{{$destek->id}}</td>
                                   <td>{{$destek->title}}</td>
                                   <td><a href="#" data-toggle="modal" data-target="#{{$destek->id}}">{{substr($destek->about, 0,10)}}</a></td>
                                   <td>{{$destek->location}}</td>

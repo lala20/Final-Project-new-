@@ -60,18 +60,32 @@
                   </div>
                </div>
              {{-- email input --}}
-             <div class="col-md-2">
-               <label for="contactEmail">Email *</label>
-             </div>
-             <div class="col-md-10">
-                 <input id="contactEmail" class="form-control" type="email" name="email">
+             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                <div class="col-md-2">
+                   <label for="contactEmail">Email *</label>
+                </div>
+                <div class="col-md-10">
+                   <input id="contactEmail" class="form-control" type="email" name="email" value="{{old('email')}}">
+                   @if ($errors->has('email'))
+                      <span class="help-block">
+                        <strong>Boşluq buraxmayın</strong>
+                      </span>
+                   @endif
+                </div>
              </div>
              {{-- message input --}}
-             <div class="col-md-2">
-               <label for="contactMessage">İsmarıc *</label>
-             </div>
-             <div class="col-md-10">
-                 <textarea id="contactMessage" rows="10" class="form-control" type="text" name="message"></textarea>
+             <div class="form-group{{ $errors->has('message') ? ' has-error' : '' }}">
+                <div class="col-md-2">
+                   <label for="contactMessage">İsmarıc *</label>
+                </div>
+                <div class="col-md-10">
+                   <textarea id="contactMessage" rows="10" class="form-control" type="text" name="message">{{old('message')}}</textarea>
+                   @if ($errors->has('message'))
+                      <span class="help-block">
+                        <strong>Boşluq buraxmayın</strong>
+                      </span>
+                   @endif
+                </div>
              </div>
              <div class="col-md-4 col-md-offset-5">
                 <input type="submit" name="send" value="Göndər" class="btn btn-success form-control">
