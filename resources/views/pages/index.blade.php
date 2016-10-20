@@ -96,12 +96,20 @@
       var myLatLng = [
       @foreach($datamaps as $datamap)
          @if($datamap->status=='1')
-            {lat: {{$datamap->lat}},
-            lng:{{$datamap->lng}},
-            title:"<b>{{$datamap->title}}</b><br> <img style='width:200px;height:150px' src='{{url('image/'.$datamap->image)}}'><br><a href='{{url('/single/'.$datamap->id)}}' class='btn pull-right'>Ətraflı</a>"
-          },
+         {lat: {{$datamap->lat}},
+         lng:{{$datamap->lng}},
+         content:"<b>{{$datamap->title}}</b><br> <img style='width:200px;height:150px' src='{{url('image/'.$datamap->image)}}'><br><a href='{{url('/single/'.$datamap->id)}}' class='btn pull-right'>Ətraflı</a>",
+         title:"{{$datamap->title}}",
+         @if ($datamap->type_id=='2')
+            icon:"https://lh3.googleusercontent.com/NU7oZ7XSozdZYdGnZs_64cn0U6hwrkKNfAr-cqFScO40nEgyIcRtvXuzSAZQn_9VqsY=w40"
+          @elseif ($datamap->type_id=='1')
+          icon:"https://lh4.ggpht.com/Tr5sntMif9qOPrKV_UVl7K8A_V3xQDgA7Sw_qweLUFlg76d_vGFA7q1xIKZ6IcmeGqg=w40"
+         @endif
+         },
           @endif
+
       @endforeach
+
       ];
 
       var map = new google.maps.Map(document.getElementById('infoMap'), {
@@ -114,7 +122,7 @@
     });
               var info = new google.maps.InfoWindow();
               function manyInfo(mark, infowindow) {
-              infowindow.setContent(mark.title);
+              infowindow.setContent(mark.content);
               infowindow.open(map, mark);
               markers.addListener('closeclick', function() {
                   infowindow.setMarker(null);
@@ -124,8 +132,9 @@
          markers = myLatLng.map(function(location, i) {
               return new google.maps.Marker({
                   position: location,
+                  content:myLatLng[i].content,
                   title:myLatLng[i].title,
-                  icon: 'https://lh3.googleusercontent.com/NU7oZ7XSozdZYdGnZs_64cn0U6hwrkKNfAr-cqFScO40nEgyIcRtvXuzSAZQn_9VqsY=w40',
+                  icon: myLatLng[i].icon,
                   animation: google.maps.Animation.DROP
               });
 
