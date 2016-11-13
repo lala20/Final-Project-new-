@@ -88,3 +88,4 @@ Route::get('/desteklist', 'AdminController@desteklist');
 Route::get('/userlist', 'AdminController@userlist');
 Route::get('/activate/{id}', 'AdminController@activate');
 Route::get('/deactivate/{id}', 'AdminController@deactivate');
+Route::get('/home', 'PagesController@index');
