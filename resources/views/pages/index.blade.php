@@ -44,7 +44,7 @@
   <section id="news">
     <div class="container">
       <div class="row">
-        @foreach($datas as $data)
+        {{-- @foreach($datas as $data)
           @if($data->status=='1' && $data->type_id=='2')
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
@@ -59,31 +59,94 @@
                       <p class="about">{{substr($data->about, 0,150)}}...</p>
                       <i class="fa fa-eye" aria-hidden="true"> {{$data->view}}</i>
                       <i class="fa fa-calendar" aria-hidden="true"></i>
-                      <?php
-                      $dbdate=new DateTime($data->deadline);
-                      $newdate=new DateTime('now');
-                      $diff = date_diff($newdate,$dbdate);
-                       ?>
-                  @if(!$diff->d == 0 && $diff->m == 0)
-                   {{$diff->d}} gün
-                @elseif($diff->d == 0 && !$diff->m == 0)
-                 {{$diff->m}} ay
-               @else
-                    {{$diff->d}} gün  {{$diff->m}} ay
-              @endif
+
                       <a href="{{url('/single/'.$data->id)}}" class="btn pull-right" role="button">Ətraflı
                       <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
           @endif
-        @endforeach
-    </div>
-      <div class="row">
-        <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
-          <a class="btn center-block" href="{{url('/isteksiyahisi')}}">Bütün istəklərə bax <i class="fa fa-arrow-right"></i></a>
+        @endforeach --}}
+
+        <div class="news-left col-lg-6 col-md-6 col-sm-6 col-xs-12 padding0">
+          <!--=====================NEWS BLOCK========================= -->
+          @foreach ($datas as $data)
+            @if($data->status=='1' && $data->type_id=='2')
+              <div class="news-block col-lg-6 col-md-6 col-sm-12 col-xs-12 padding0 thumbnail">
+              <div class="news-image col-lg-12 padding0">
+                <div class="news-type news-istek">
+                  İstək
+                </div>
+                <a href="{{url('/single/'.$data->id)}}"><img src="{{url('/image/'.$data->image)}}" alt="İstək image" /></a>
+              </div>
+              <div class="news-content col-lg-12 padding0">
+                <div class="news-title">
+                  <a href="#">{{$data->title}}</a>
+                </div>
+                <div class="news-location col-lg-12">
+                  <p><i class="fa fa-map-marker"></i> {{$data->location}}</p>
+                </div>
+                <div class="news-stats col-lg-12">
+                  <ul class="list-inline">
+                    <li><i class="fa fa-eye"></i> {{$data->view}}</li>
+                    <li><i class="fa fa-calendar"></i>
+                      @if(!$diff->d == 0 && $diff->m == 0)
+                        {{$diff->d}} gün
+                      @elseif($diff->d == 0 && !$diff->m == 0)
+                        {{$diff->m}} ay
+                      @else
+                        {{$diff->m}} ay {{$diff->d}} gün
+                      @endif
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              </div>
+            @endif
+          @endforeach
+              <!--=====================END NEWS BLOCK========================= -->
+            </div>
+
+
+        <div class="news-right col-lg-6 col-md-6 col-sm-6 col-xs-12 padding0">
+          <!--=====================NEWS BLOCK========================= -->
+          @foreach ($datas as $data)
+            @if($data->status=='1' && $data->type_id=='1')
+              <div class="news-block col-lg-6 col-md-6 col-sm-12 col-xs-12 padding0 thumbnail">
+              <div class="news-image col-lg-12 padding0">
+                <div class="news-type news-destek">
+                  Dəstək
+                </div>
+                <a href="{{url('/single/'.$data->id)}}"><img src="{{url('/image/'.$data->image)}}" alt="İstək image" /></a>
+              </div>
+              <div class="news-content col-lg-12 padding0">
+                <div class="news-title">
+                  <a href="#">{{$data->title}}</a>
+                </div>
+                <div class="news-location col-lg-12">
+                  <p><i class="fa fa-map-marker"></i> {{$data->location}}</p>
+                </div>
+                <div class="news-stats col-lg-12">
+                  <ul class="list-inline">
+                    <li><i class="fa fa-eye"></i> {{$data->view}}</li>
+                    <li><i class="fa fa-calendar"></i>
+                      @if(!$diff->d == 0 && $diff->m == 0)
+                        {{$diff->d}} gün
+                      @elseif($diff->d == 0 && !$diff->m == 0)
+                        {{$diff->m}} ay
+                      @else
+                        {{$diff->m}} ay {{$diff->d}} gün
+                      @endif
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              </div>
+            @endif
+          @endforeach
+              <!--=====================END NEWS BLOCK========================= -->
         </div>
-      </div>
+    </div>
     </div>
   </section>
  <script type="text/javascript" src="scripts/main.js"></script>
@@ -98,12 +161,20 @@
          @if($datamap->status=='1')
          {lat: {{$datamap->lat}},
          lng:{{$datamap->lng}},
-         content:"<b>{{$datamap->title}}</b><br> <img style='width:200px;height:150px' src='{{url('image/'.$datamap->image)}}'><br><a href='{{url('/single/'.$datamap->id)}}' class='btn pull-right'>Ətraflı</a>",
+
+         content:'<div id="infow">' +
+                    '<div class="infow-content">' +
+                      '<div class="infow-title"></div>' +
+                      '<img src="{{url('/image/'.$datamap->image)}}" height="115" width="100">' +
+                      '<p>lorem ipsum st dolar amitgbhgbvfdbvfbvgf</p>'
+             +
+                    '</div>' +
+                  '</div>',
          title:"{{$datamap->title}}",
          @if ($datamap->type_id=='2')
-            icon:"https://lh3.googleusercontent.com/NU7oZ7XSozdZYdGnZs_64cn0U6hwrkKNfAr-cqFScO40nEgyIcRtvXuzSAZQn_9VqsY=w40"
+            icon:"/image/green-icon.png"
           @elseif ($datamap->type_id=='1')
-          icon:"https://lh4.ggpht.com/Tr5sntMif9qOPrKV_UVl7K8A_V3xQDgA7Sw_qweLUFlg76d_vGFA7q1xIKZ6IcmeGqg=w40"
+          icon:"/image/red-icon.png"
          @endif
          },
           @endif

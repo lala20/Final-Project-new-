@@ -17,7 +17,7 @@ class PagesController extends Controller
 {
   public function index()
   {
-      $datas=Elan::orderBy('created_at','desc')->take(4)->get();
+      $datas=Elan::orderBy('created_at','desc')->get();
       $datamaps=Elan::all();
       foreach ($datamaps as $check_date) {
       $dbdate=new DateTime($check_date->deadline);
@@ -27,9 +27,10 @@ class PagesController extends Controller
         $check_date->status = 0;
         $check_date->update();
       }
+
     }
 
-      return view('pages.index',compact('datas','datamaps'));
+      return view('pages.index',compact('datas','datamaps','diff'));
   }
 
     public function haqqimizda(){

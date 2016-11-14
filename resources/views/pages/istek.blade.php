@@ -32,7 +32,7 @@
                     <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                       <label class="control-label col-sm-3" for="head">Başlıq <span>*</span></label>
                       <div class="col-sm-9">
-                        <input type="text" name="title" class="form-control" maxlength="30" id="head" placeholder="Məsələn: Sökük məktəb, qırıq əşyalar və s...">
+                        <input type="text" name="title" class="form-control" maxlength="28" id="head" placeholder="Məsələn: Sökük məktəb, qırıq əşyalar və s...">
                         @if ($errors->has('title'))
                             <span class="help-block">
                               <strong>Boşluq buraxmayın</strong>
