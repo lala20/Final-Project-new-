@@ -7,6 +7,7 @@ use App\City;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="_token" content="{!!csrf_token()!!}">
     <title>@yield('title')</title>
     <!-- Bootstrap və Fontawesome sass ilə qoşulub -->
     <link rel="stylesheet" href="{{url('css/app.css')}}">
@@ -136,8 +137,10 @@ use App\City;
 </div>
 
 <script src="{{url('/scripts/vendors/jquery.js')}}"></script>
+<script src="{{url('/scripts/vendors/jquery-ui.js')}}"></script>
 <script src="{{url('/scripts/vendors/bootstrap.min.js')}}"></script>
 <script src="{{url('/scripts/vendors/modernizr.min.js')}}"></script>
+<script src="{{url('/scripts/AjaxMap.js')}}"></script>
 <script src="{{url('/scripts/main.js')}}"></script>
 </body>
 </html>

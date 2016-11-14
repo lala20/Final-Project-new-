@@ -12,6 +12,26 @@
       };
  });
 
+ //index-de drag ishlemesi ucun
+     $('#moveButton').on('mousedown',function(event) {
+        $('#searchBoxDrag').draggable({
+             containment: '#infoMap'
+         });
+            $('#searchBoxDrag').draggable('enable');
+     });
+      $('#moveButton').on('mouseup',function(event) {
+          $('#searchBoxDrag').draggable('disable');
+      });
+     $('.index3').click(function(event) {
+        var t = $(this);
+        var data = t.attr('data-index');
+        $('.index3').css('background', '#28353d');
+        console.log(data);
+        $('.clickedVer').hide();
+        $('.clickedVer[data-info="'+data+'"]').show();
+        t.css('background', 'transparent');
+      });
+ //index drag end
  var city;
  $('#seherler').change(function(){
    city = $(this).val();

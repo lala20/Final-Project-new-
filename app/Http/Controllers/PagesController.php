@@ -15,9 +15,9 @@ use Session;
 use Mail;
 class PagesController extends Controller
 {
-  public function index()
+  public function index(Request $request)
   {
-      $datas=Elan::orderBy('created_at','desc')->get();
+        $datas=Elan::orderBy('created_at','desc')->take(4)->get();
       $datamaps=Elan::all();
       foreach ($datamaps as $check_date) {
       $dbdate=new DateTime($check_date->deadline);
@@ -27,9 +27,22 @@ class PagesController extends Controller
         $check_date->status = 0;
         $check_date->update();
       }
-
     }
-
+    //Ajax search
+    if ($request->ajax()) {
+      if ($request->ElanLocation =="all" && $request->ElanType =="all" && $request->ElanNov =="all") {
+        $datalar=Elan::all();
+      }else if($request->ElanLocation !=="all" || $request->ElanType !=="all" || $request->ElanNov !=="all"){
+        $datalar=Elan::where('location',$request->ElanLocation)
+        ->orWhere('type_id',$request->ElanType)
+        ->orWhere('nov',$request->ElanNov)
+        ->get();
+      }
+      $data = [
+        'data' => $datalar,
+      ];
+      return $data;
+    };
       return view('pages.index',compact('datas','datamaps','diff'));
   }
 

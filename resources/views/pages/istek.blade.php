@@ -151,6 +151,6 @@
   <script src="{{url('/scripts/vendors/jquery.js')}}"></script>
 
   <script type="text/javascript" src="{{url('/scripts/main.js')}}"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&libraries=places&callback=initAutocomplete"
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&libraries=places&callback=initAutocomplete&language=az"
          async defer></script>
 @endsection

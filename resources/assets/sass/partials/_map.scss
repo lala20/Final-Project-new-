@@ -51,7 +51,57 @@
     //INPUT ROWS END
   }
 }
-
+#searchBoxDrag{
+    top:7%;
+    left: 2%;
+    width: 240px;
+    height: 300px;
+    background-color:rgba(52,73,94,0.9);
+    z-index: 999;
+    position: absolute;
+    color: #efefef;
+    ul{
+        clear: both;
+        padding-left: 25px;
+        li{
+            list-style: none;
+            padding-top: 17px;
+            select{
+                border:0px;
+                width: 180px;
+                height: 35px;
+                color: grey;
+            }
+            label{
+                margin-bottom: 0px;
+            }
+        }
+    }
+    .infopart{
+        display: none;
+    }
+    #moveButton, #searchButton, #infoButton{
+        padding: 8px 0 8px 15px;
+        width:60px;
+        height:45px;
+        background-color:#28353d;
+        float: left;
+    }
+    #moveButton{
+        cursor: move;
+    }
+    #searchButton{
+        background: rgba(52,73,94,0.9);
+        background: transparent;
+    }
+    #infoButton{
+        padding: 8px 0 8px 25px;
+    }
+    p{
+        padding: 10px;
+        clear: both;
+    }
+}
 // Map styles
 #googlemap{
   iframe{
