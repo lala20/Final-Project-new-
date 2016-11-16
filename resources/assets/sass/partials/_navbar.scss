@@ -1,9 +1,3 @@
-/*
-   Final frontend project
-   Authors: Lalə,Günel,Fərid,Naseh
-   Team leader: Aysel
-*/
-
 // CONTACT SECTION START
 #contact {
     background: #3d3a3a; // Contactın arxa planı qara - DƏYİŞİLƏCƏK !
@@ -117,6 +111,32 @@
         a{
           transition: all .3s ease;
         }
+        li:nth-child(1){
+          a{
+            transition: all .3s ease;
+            padding: 5px 10px 5px 10px;
+            margin-top: 10px;
+            margin-right: 10px;
+            background: #5DB124;
+            color: white;
+          }
+          i{
+            color: white;
+          }
+        }
+        li:nth-child(2){
+          a{
+            transition: all .3s ease;
+            padding: 5px 10px 5px 10px;
+            margin-top: 10px;
+            margin-right: 10px;
+            background: #CE2F2F;
+            color: white;
+          }
+          i{
+            color: white;
+          }
+        }
         a:hover{
           color: #2AB6FF;
         }
@@ -132,7 +152,7 @@
       }
     }
       // REGISTER MODAL
-      
+
     .modal-body{
       .col-lg-8{
          margin-bottom: 20px;

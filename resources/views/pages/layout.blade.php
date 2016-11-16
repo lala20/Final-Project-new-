@@ -54,13 +54,13 @@ use App\City;
               <!-- Navbar  Menu -->
                 <ul class="nav navbar-nav">
                     <li><a {{Request::is('/') ? "class=active" : ''}} href="{{url('/')}}"><i class="fa fa-home"></i> Ana Səhİfə</a></li>
-                    <li><a {{Request::is('istek') ? "class=active" : ''}} href="{{url('/istek')}}"><i class="fa fa-map-marker"></i> İstək əlavə et</a></li>
-                    <li><a {{Request::is('destek') ? "class=active" : ''}} href="{{url('/destek')}}"><i class="fa fa-yelp"></i> Dəstək ol</a></li>
                     <li><a {{Request::is('haqqimizda') ? "class=active" : ''}} href="{{url('/haqqimizda')}}"><i class="fa fa-info-circle"></i> Haqqımızda</a></li>
                     <li><a {{Request::is('elaqe') ? "class=active" : ''}} href="{{url('/elaqe')}}"><i class="fa fa-phone"></i> Əlaqə</a></li>
                 </ul>
 
                   <ul class="nav navbar-nav navbar-right">
+                    <li><a {{Request::is('istek') ? "class=active" : ''}} href="{{url('/istek')}}"><i class="fa fa-plus"></i> İstək əlavə et</a></li>
+                    <li><a {{Request::is('destek') ? "class=active" : ''}} href="{{url('/destek')}}"><i class="fa fa-plus"></i> Dəstək ol</a></li>
                       <!-- Authentication Links -->
                       @if (Auth::guest())
                         <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-user-plus"></i> Qeydiyyat</a></li>
